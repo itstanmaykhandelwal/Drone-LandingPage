@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DRONE</title>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+
+	<style>
+       html,body{
+       	margin: 0;
+       	padding: 0;
+       	width: 100%;
+       	height: 100vh;
+       	font-family: "Playfair Display"!important;
+       	overflow:hidden;
+    	}
+       .container{
+       	width: 100%;
+       	height: 100vh;
+       	margin: 0;
+       	padding: 0;
+       }
+       .left, .right{
+       	position: absolute;
+       	height: 100%;
+       	width: 50%;
+       }
+       .left{
+       	background-color: rgb(24,24,24);
+       }
+       .right{
+       	left: 50%;
+       	background-color: #e0e0e0;
+       }
+       .nav{
+       	position: fixed;
+       	width: 100%;
+       	height: 100px;
+       }
+       .logo,.next{
+       	line-height: 80px;
+       	position: absolute;
+       	padding: 10px;
+       }
+       .watch, .cart{
+       	line-height: 80px;
+       	position: absolute;
+       	padding: 10px;
+       	right: 0;
+       }
+       .logo{
+       	padding: 10px 80px 10px 60px;
+       	background-color: #e0e0e0;
+       }
+       .next{
+       	left: 280px;
+       	color: #fff;
+       }
+       .watch{
+       	right: 220px;
+       	font-family: helvetica;
+       	color: grey;
+       	font-weight: lighter;
+       	text-transform: uppercase;
+       }
+       .cart{
+       	right: 70px;
+       }
+       .right-sidebar{
+       	right: 80px;
+       	position: absolute;
+       	top: 45%;
+       	transform: translateY(-50%);
+       }
+       .right-sidebar ul{
+       	list-style: none;
+       }
+       .title{
+       	font-size: 36px;
+       	font-family: "Playfail Display";
+       	padding-bottom: 40px;
+       }
+       .right-sidebar li:not(:first-child){
+       	padding: 6px 0;
+       }
+       .product{
+       	position: absolute;
+       	top: 50%;
+       	left: 49%;
+       	transform: translate(-50%,-50%);
+       	animation: fly 4s ease-in-out infinite;
+       }
+       .product img{
+       	width: 660px;
+       }
+       @keyframes fly{
+       	0%{
+       		transform: translate(-50%, -46%);
+       	}
+       	50%{
+       		transform: translate(-50%, -54%);
+       	}
+       	100%{
+       		transform: translate(-50%, -46%);
+       	}
+       }
+       .left-bottom{
+       	position: absolute;
+       	left: 60px;
+       	bottom: 40px;
+       	font-family: 3px;
+       	color: grey;
+       	text-transform: uppercase;
+       	font-size: 12px;
+       }
+       .left-sidebar{
+       	left: 60px;
+       	position: absolute;
+       	top: 46%;
+       	transform: translateY(-50%);
+       	text-align: left;
+       	width: 26;
+       	color: #fff;
+       }
+       .left-sidebar button{
+       	padding: 24px 48px;
+       	background-color: #e0e0e0;
+       	color: #000;
+       	outline: none;
+       	border: none;
+       	margin: 1em 0;
+       	font-family: helvetica;
+       	font-weight: bolder;
+       	letter-spacing: 4px;
+       	cursor: pointer;
+       }
+       .left-sidebar p{
+       	font-family: helvetica;
+       	font-weight: lighter;
+       	line-height: 24px;
+       	width: 320px;
+       	color: grey;
+       }
+       #price{
+       	color: #fff;
+       }
+       .media{
+       	position: absolute;
+       	bottom: 40px;
+       	right: 60px;
+       }
+       .media ul{
+       	list-style: none;
+       }
+       .media ul li{
+        display: inline-block;
+       }
+       .media ul li:not(:last-child){
+       	padding-right: 40px;
+       }
+	</style>
+</head>
+<body>
+    <div class="container">
+    	<div class="left"></div>
+    	<div class="right"></div>
+    	<div class="nav">
+        	<div class="logo">DJI MAVIC</div>
+
+        	<div class="next"><i class="fa fa-angle-right"></i></div>
+
+        	<div class="watch"><i class="fa fa-caret-right"></i>&nbsp; watch tutorial</div>
+
+        	<div class="cart"><i class="fa fa-shopping-cart"></i></div>
+    	</div>
+    	<div class="right-sidebar">
+    		<ul>
+            	<li class="title">Shop</li>
+            	<li>Drones</li>
+            	<li>Cameras</li>
+            	<li>Lenses</li>
+            	<li>Accessories</li>
+            	<li>View all</li>
+        	</ul>
+        </div>
+		<div class="left-bottom">
+     		<p>Mavic pro wherever you go</p>
+     	</div>
+
+        <div class="left-sidebar">
+            <h1 class="product-title">Mavic Pro Platinum</h1>
+
+            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati culpa veniam enim quam, sunt officiis, maiores quod esse molestias a!</p>
+
+            <p id="price">Price : USD $999</p>
+
+            <button class="btn">BUY NOW</button>
+
+        </div>
+
+        <div class="product" id="product">
+            <img src="images/drone.png" alt="drone">
+        </div>
+
+        <div class="media">
+            <ul>
+                  <li><i class="fab fa-facebook-f"></i></li>
+                  <li><i class="fab fa-instagram"></i></li>
+                  <li><i class="fab fa-twitter"></i></li>
+           	</ul>
+        </div>
+    </div>
+    <script>
+    	TweenMax.from(".right", 1.6, {
+           delay: 0.6,
+           // opacity: 0,
+           // x: -20,
+           width: 0,
+           ease: Expo.easeInOut
+     });
+
+      TweenMax.from(".logo", 1, {
+            delay: 1,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".next", 1, {
+            delay: 1.2,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".watch", 1, {
+            delay: 1.4,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".cart", 1, {
+            delay: 1.6,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".product-title", 2, {
+            delay: 1.6,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".desc", 2, {
+            delay: 1.8,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from("#price", 2, {
+            delay: 2,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".btn", 2, {
+            delay: 2.2,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.staggerFrom(".right-sidebar ul li", 1, {
+            delay: 2.6,
+            opacity: 0,
+            y: 20,
+            ease: Power3.easeInOut
+      }, 0.08);
+
+      TweenMax.from(".left-bottom", 2, {
+            delay: 2.8,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.staggerFrom(".media ul li", 1, {
+            delay: 3.6,
+            opacity: 0,
+            y: 20,
+            ease: Power3.easeInOut
+      }, 0.08);
+
+      TweenMax.from(".product img", 3, {
+            delay: 2,
+            // opacity: 0,
+            // y: 20,
+            scale: 0,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.to(".product img", 3, {
+            delay: 2,
+            // opacity: 0,
+            // y: 20,
+            scale: 1,
+            ease: Expo.easeInOut
+      });
+
+    </script>
+</body>
+</html>
